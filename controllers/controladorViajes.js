@@ -1,5 +1,20 @@
 var viajesModel = require('../models/viajesModel');
-//var controladorViajes = {};
+
+//multer
+var express = require('express');
+var router = express.Router();
+const Multer = require('multer');
+
+const storage = Multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, "uploads/");
+    },
+    filename: (req, file, cb) => {
+        cb(null, file.originalname);
+    }
+});
+const upload = Multer({storage});
+//fin multer
 
 exports.verTodos = (req, res, next)=>{console.log(JSON.stringify(req.session))
     if(req.session.rol === 0 || req.session.rol === undefined){

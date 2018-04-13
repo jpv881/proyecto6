@@ -405,3 +405,7 @@ i.fa.fa-check {
 i.fa.fa-times {
     color: crimson;
 }
+
+.smFileInput {
+    padding: .1rem .1rem;
+}

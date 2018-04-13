@@ -21,4 +21,13 @@ Usuarios.getUsuarioByEmail = (usuario, callback)=>{
     });
 };
 
+Usuarios.verTodos = (cb)=>{
+    if(!conn) return cb("error en la conexión");
+    let sql = "select * from usuarios";
+    conn.query(sql, (error, rows)=>{
+        if(error) return cb(error);
+        else return cb(null, rows);
+    });
+}
+
 module.exports = Usuarios;

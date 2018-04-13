@@ -147,4 +147,20 @@ exports.registro = (req, res, next)=>{
     });
 }
 
+exports.verUsuarios = (req, res, next)=>{
+    if(req.session.rol === 0 || req.session.rol === undefined){
+        res.redirect('/');
+    }else{
+        Usuario.verTodos((error, rows)=>{
+           if(error) return res.status(500).json(error);
+console.log(rows)
+           res.render('', {
+               layout: 'admin',
+               title: 'Administracion',
+               rows
+           })
+        });
+    }
+}
+
 //module.exports = controladorUsuarios;
