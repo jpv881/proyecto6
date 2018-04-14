@@ -1,22 +1,22 @@
 var viajesModel = require('../models/viajesModel');
 
 //multer
-var express = require('express');
-var router = express.Router();
-const Multer = require('multer');
-
-const storage = Multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, "uploads/");
-    },
-    filename: (req, file, cb) => {
-        cb(null, file.originalname);
-    }
-});
-const upload = Multer({storage});
+// var express = require('express');
+// var router = express.Router();
+// const Multer = require('multer');
+//
+// const storage = Multer.diskStorage({
+//     destination: (req, file, cb) => {
+//         cb(null, "uploads/");
+//     },
+//     filename: (req, file, cb) => {
+//         cb(null, file.originalname);
+//     }
+// });
+// const upload = Multer({storage});
 //fin multer
 
-exports.verTodos = (req, res, next)=>{console.log(JSON.stringify(req.session))
+exports.verTodos = (req, res, next)=>{
     if(req.session.rol === 0 || req.session.rol === undefined){
         res.redirect('/');
     }else{
@@ -100,7 +100,8 @@ exports.insertDestino = (req, res, next)=>{
     destino.type = req.body.type;
     destino.active = active;
     destino.price = req.body.price;
-    destino.path = req.body.path;
+    destino.path = '\\images\\'+req.file.originalname;
+    destino.path = destino.path.replace(/\\/g,"/");
 
     viajesModel.insertViaje(destino, (error, insertID)=>{
         if(insertID){
