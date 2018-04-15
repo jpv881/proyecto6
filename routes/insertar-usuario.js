@@ -2,7 +2,7 @@ var express = require('express');
 var session = require('express-session');
 var router = express.Router();
 let usersModel = require('../models/usersModel');
-let bcrypt = require('../middleware/crypto');
+let bcrypt = require('../helpers/crypto');
 var app = express();
 
 router.post('/', function (req, res, next) {

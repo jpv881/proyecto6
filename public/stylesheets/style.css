@@ -339,19 +339,19 @@ footer button:hover,
     padding-top: 71px;
 }
 
-.fa-pencil-square-o:hover{
+.fa-edit:hover{
     cursor: pointer;
 }
 
-.fa-pencil-square-o{
+.fa-edit{
     color: #ef8c10;
 }
 
-.fa-trash-o {
+.fa-trash-alt {
     color: red;
 }
 
-.fa-trash-o:hover {
+.fa-trash-alt:hover {
     cursor: pointer;
 }
 
@@ -362,7 +362,8 @@ footer button:hover,
 
 
 #seccionListaDestinos,
-#seccionFormEditar{
+#seccionFormEditar,
+#seccionListaUsuarios {
     padding-top: 100px;
     min-height: 100vh;
 }
@@ -377,7 +378,8 @@ footer button:hover,
 
 }
 
-#seccionListaDestinos table {
+#seccionListaDestinos table,
+#seccionListaUsuarios table {
     background-color: rgba(0,0,0,0.6);
     color: white;
 }
@@ -398,14 +400,37 @@ footer button:hover,
     text-align: center;
 }
 
-i.fa.fa-check {
+.fa-check {
     color: #00cc00;
 }
 
-i.fa.fa-times {
+.fa-times {
     color: crimson;
 }
 
 .smFileInput {
     padding: .1rem .1rem;
+}
+
+#seccionListaUsuarios table td {
+    padding: .3rem .9rem;
+    //display: flex;
+    //justify-content: center;
+}
+
+#seccionListaUsuarios table  {
+    width: auto;
+}
+
+.fa-envelope:hover,
+.fa-retweet:hover {
+    cursor: pointer;
+}
+
+.fa-envelope {
+    color: #FAFEF0;
+}
+
+.fa-retweet {
+    color: #F8CEE6;
 }

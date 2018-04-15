@@ -32,4 +32,6 @@ router.post('/guardar-destino',upload.single('imagen'), controladorViajes.insert
 
 router.get('/usuarios', controladorUsuarios.verUsuarios);
 
+router.get('/activar-usuario/:id', controladorUsuarios.activar);
+
 module.exports = router;

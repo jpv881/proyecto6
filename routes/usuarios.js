@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 let usersModel = require('../models/usersModel');
-let bcrypt = require('../middleware/crypto');
+let bcrypt = require('../helpers/crypto');
 var controladorUsuarios = require('../controllers/controladorUsuarios');
 
 /* GET login page. */
